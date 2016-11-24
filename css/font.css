@@ -1,0 +1,20 @@
+@font-face {
+  font-family:"Open Sans";
+  font-style:normal;
+  font-weight:300;
+  src:url("../fonts/open-sans/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family:"Open Sans Semibold";
+  font-style:normal;
+  font-weight:300;
+  src:url("../fonts/open-sans/OpenSans-Semibold.ttf");
+}
+
+@font-face {
+  font-family:"Open Sans Bold";
+  font-style:normal;
+  font-weight:300;
+  src:url("../fonts/open-sans/OpenSans-Bold.ttf");
+}

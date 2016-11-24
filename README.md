@@ -1,0 +1,1 @@
+To get started, go to the index.php file in the htdocs root folder

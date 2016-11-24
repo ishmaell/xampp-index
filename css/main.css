@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+}
+a {text-decoration: none;}
+.clearfix:before, .clearfix:after {display: table;content: "";}
+.clearfix:after {clear: both;}
+body {
+	background: #f9f9f9;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+.main-container{}
+.header {
+    height: 50px;
+    width: 100%;
+    top: 0;
+    left: 220px;
+    border-bottom: 1px solid #ededed;
+    position: fixed;
+    background: #fff;
+    width: calc(100% - 220px);
+}
+.header h3 {
+    text-align: center;
+    line-height: 50px;
+    color: #666666;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "Open Sans Bold", sans-serif;
+}
+.nav-bar {
+	width: 220px;
+    height: 100%;
+    background: #1D2127;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
+}
+.nav-list {
+
+}
+.nav-list>li {
+    display: block;
+}
+.nav-list>li.nav-title{
+    color: #fff;
+    font-family: "Open Sans Semibold", sans-serif;
+    font-size: 12px;
+    line-height: 50px;
+    padding: 0 15px;
+}
+.nav-list>li a {
+    display: block;
+    color: #abb4be;
+    transition: color 0.3s;
+}
+.nav-list>li a:hover {
+    color: #fff;
+}
+.nav-list>li a i{
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    font-size: 24px;
+    float: left;
+    line-height: 50px;
+}
+.nav-list>li a span {
+    display: inline-block;
+    float: left;
+    line-height: 50px;
+    font-family: "Open Sans Semibold", sans-serif;
+    font-size: 12px;
+}
+.content {
+    background: #f9f9f9;
+    height: 300px;
+    padding-top: 50px;
+    padding-left: 220px;
+    height: 100%;
+}
+.project {
+    text-align: center;
+    margin: 15px 0;
+}
+.project a {
+    color: #333;
+    display: block;
+    transition: background 0.3s;
+}
+.project a:hover, .project a.highlighted{
+    background: rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+.project a:hover h4, .project a.highlighted h4 {color: #111;}
+.project .project-dir {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.project .project-dir i{
+    display: block;
+    font-size: 6em;
+    color: #397f9e;
+    margin-bottom: 10px;
+}
+.project .project-dir h4{
+    color: #333;
+    font-weight: normal;
+    transition: color 0.3s, font 0.3s;
+}
+footer{
+    background: #fff;
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    left: 220px;
+    text-align: center;
+    font-size: 12px;
+    color: #666666;
+    border-top: 1px solid #ededed;
+    width: calc(100% - 220px);
+}
+footer a {
+    color: #666666;
+}
+footer a:hover {
+    color: #333;
+    cursor: pointer;
+}
