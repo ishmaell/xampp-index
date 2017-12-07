@@ -6,6 +6,7 @@ $global_url = '../';
 $http_host = $_SERVER['HTTP_HOST'];
 $base_url = 'http://'. $http_host .'/projects/';
 $dir = new DirectoryIterator($global_url);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,37 +18,48 @@ $dir = new DirectoryIterator($global_url);
     <link rel="stylesheet" href="<?php echo $base_url; ?>css/font.css">
     <link rel="stylesheet" href="<?php echo $base_url; ?>css/grid.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $base_url; ?>css/main.css">
-    <script type="text/javascript" src="<?php echo $base_url; ?>js/app.js"></script>
 </head>
 
 <body>
     <!-- START MAIN CONTAINER -->
     <div class="main-container">
         <!-- START HEADER -->
-        <div class="header">
+        <div class="header clearfix">
+            <input type="text" class="" id="search" placeholder="Search projects">
             <h3>Projects</h3>
         </div>
         <!-- / END HEADER -->
+        <?php
+            $projectArray = [];
+
+            foreach ($dir as $file_info) {
+                if ($file_info->isDir() && !$file_info->isDot()) {
+                    $url = $file_info->getFilename();
+                    array_push($projectArray, $url);
+                    sort($projectArray);
+                }
+            }
+            $projectLength = count($projectArray);
+        ?>
         <!-- START NAV BAR -->
         <div class="nav-bar">
             <ul class="nav-list">
                 <li class="nav-title">Projects</li>
                 <?php
-                    foreach ($dir as $file_info) {
-                        if ($file_info->isDir() && !$file_info->isDot()) {
-                            $url = $file_info->getFilename();
-                            $project = '<li>';
-                            $project .= '<a class="clearfix" href="'. $global_url .''. $url .'" data-name="'. $file_info->getFilename() .'">';
-                            $project .= '<i class="ion ion-folder"></i>';
-                            $project .= '<span>'.$file_info->getFilename().'</span>';
-                            $project .= '</a>';
-                            $project .= '</li>';
-                            echo $project;
-                        }
+
+                    for($x = 0; $x < $projectLength; $x++) {
+                        $project = '<li>';
+                        $project .= '<a class="clearfix" href="'. $global_url .''. $projectArray[$x] .'" data-name="'. $projectArray[$x] .'">';
+                        $project .= '<i class="ion ion-folder"></i>';
+                        $project .= '<span>'.$projectArray[$x].'</span>';
+                        $project .= '</a>';
+                        $project .= '</li>';
+                        echo $project;
                     }
+
                 ?>
                 <li class="footer">
-                       
+
                 </li>
             </ul>
         </div>
@@ -55,22 +67,24 @@ $dir = new DirectoryIterator($global_url);
         <!-- START CONTENT -->
         <div class="content">
             <!-- START ROW -->
-            <div class="row">
+
+            <div class="row" id="row">
+                
             <?php
-                foreach ($dir as $file_info) {
-                    if ($file_info->isDir() && !$file_info->isDot()) {
-                        $url = $file_info->getFilename();
-                        $project = '<div class="column-2 project">';
-                        $project .= '<a class="clearfix" href="'. $global_url .''. $url .'" data-name="'. $file_info->getFilename() .'">';
-                        $project .= '<div class="project-dir">';
-                        $project .= '<i class="ion ion-folder"></i>';
-                        $project .= '<h4>'.$file_info->getFilename().'</h4>';
-                        $project .= '</div>';
-                        $project .= '</a>';
-                        $project .= '</div>';
-                        echo $project;
-                    }
+
+                for($x = 0; $x < $projectLength; $x++) {
+
+                    $project = '<div class="column-2 project">';
+                    $project .= '<a class="clearfix" href="'. $global_url .''. $projectArray[$x] .'" data-name="'. $projectArray[$x] .'">';
+                    $project .= '<div class="project-dir">';
+                    $project .= '<i class="ion ion-folder"></i>';
+                    $project .= '<h4>'.$projectArray[$x].'</h4>';
+                    $project .= '</div>';
+                    $project .= '</a>';
+                    $project .= '</div>';
+                    echo $project;
                 }
+
             ?>
             </div>
             <!-- / END ROW -->
@@ -83,5 +97,7 @@ $dir = new DirectoryIterator($global_url);
         <!-- / END FOOTER -->
     </div>
     <!-- / END MAIN CONTAINER -->
+    
+    <script type="text/javascript" src="<?php echo $base_url; ?>js/app.js"></script>
 
 </body></html>

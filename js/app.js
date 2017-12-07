@@ -1,11 +1,11 @@
 window.onload = function()
 {
-
 	/*
 	 * ----------------------------------------------------------------------------------------
 	 *  HIGHTLIGHT PROJECT IN MAIN CONTENT FROM NAV BAR
 	 * ----------------------------------------------------------------------------------------
 	 */
+	 
 	(function(){
 		var x = document.querySelectorAll('.nav-bar a'), y = document.querySelectorAll('.project a'),
 			header_title = document.querySelector('.header h3'), foo, timeout;
@@ -38,6 +38,7 @@ window.onload = function()
 			})
 		}
 	})();
+	
 	/*
 	 * ----------------------------------------------------------------------------------------
 	 *  CHANGE HEADER TITLE FROM PROJECT HIGHLIGHTED 
@@ -75,4 +76,31 @@ window.onload = function()
 			})
 		}
 	})();
+
+	/*
+	 * ----------------------------------------------------------------------------------------
+	 *  SEARCH PROJECTS
+	 * ----------------------------------------------------------------------------------------
+	 */
+	(function() {
+		var search = document.getElementById('search')
+		search.addEventListener('keyup', searchProject)
+		
+	})()
+}
+
+function searchProject() {
+	var searchTerm = this.value;
+	var row, project, a, dataName;
+	row = document.getElementById('row');
+	project = row.getElementsByClassName('project');
+	for (var i = 0; i < project.length; i++) {
+		
+		dataName = project[i].getElementsByTagName('a')[0].getAttribute('data-name');
+		if(dataName.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
+			project[i].style.display = "";
+		} else {
+			project[i].style.display = "none";
+		}
+	}
 }
