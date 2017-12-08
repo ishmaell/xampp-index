@@ -2,6 +2,9 @@
 
 ini_set('display_errors', 'On');
 error_reporting(E_ALL);
+
+include_once "models/library.php";
+$library = new Library();
 $global_url = '../';
 $http_host = $_SERVER['HTTP_HOST'];
 $base_url = 'http://'. $http_host .'/projects/';
@@ -14,6 +17,7 @@ $dir = new DirectoryIterator($global_url);
     <meta charset="utf-8">
     <title>Projects</title>
     <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo $base_url; ?>fonts/ionicons-2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="<?php echo $base_url; ?>css/font.css">
     <link rel="stylesheet" href="<?php echo $base_url; ?>css/grid.css">
@@ -79,11 +83,11 @@ $dir = new DirectoryIterator($global_url);
 
                 for($x = 0; $x < $projectLength; $x++) {
 
-                    $project = '<div class="column-2 project">';
+                    $project = '<div class="project">';
                     $project .= '<a class="clearfix" href="'. $global_url .''. $projectArray[$x] .'" data-name="'. $projectArray[$x] .'">';
                     $project .= '<div class="project-dir">';
                     $project .= '<i class="ion ion-folder"></i>';
-                    $project .= '<h4>'.$projectArray[$x].'</h4>';
+                    $project .= '<h4>'.$library->textTrunc($projectArray[$x], 2).'</h4>';
                     $project .= '</div>';
                     $project .= '</a>';
                     $project .= '</div>';
@@ -97,7 +101,7 @@ $dir = new DirectoryIterator($global_url);
         <!-- / END CONTENT -->
         <!-- START FOOTER -->
         <footer>
-            Powered by <a href="http://www.isiakaismaila.com" target="_blank">Isiaka Ismaila</a>
+            Powered by <a href="https://github.com/ishmaell" target="_blank">Isiaka Ismaila</a>
         </footer>
         <!-- / END FOOTER -->
     </div>

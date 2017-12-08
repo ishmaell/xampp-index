@@ -35,11 +35,12 @@ body {
     float: right;
     position: relative;
     border: 1px solid #2d9ee0;
+    background: #fff;
     height: 36px;
     width: 250px;
     margin: 7px 20px 0 0;
     border-radius: 18px;
-    transition: width 0.2s ease;
+    transition: width 0.2s ease, background 0.2s ease;
 }
 .header .search-area span.search-icon {
     font-size: 22px;
@@ -63,8 +64,8 @@ body {
 .header h3 {
     text-align: center;
     line-height: 50px;
-    color: #666666;
-    font-size: 16px;
+    color: #343434;
+    font-size: 18px;
     font-weight: normal;
     font-family: "Open Sans Bold", sans-serif;
     float: left;
@@ -126,31 +127,44 @@ body {
 .project {
     text-align: center;
     margin: 15px 0;
+    display: inline-block;
+    width: 200px;
+    height: 180px;
 }
 .project a {
     color: #333;
     display: block;
     transition: background 0.3s;
+    border-radius: 4px;
 }
 .project a:hover, .project a.highlighted{
     background: rgba(0,0,0,0.1);
     cursor: pointer;
 }
-.project a:hover h4, .project a.highlighted h4 {color: #111;}
+.project a:hover h4, .project a.highlighted h4 {
+    background: #2196f3;
+    color: #fff;
+}
 .project .project-dir {
     padding-top: 15px;
     padding-bottom: 15px;
 }
 .project .project-dir i{
     display: block;
-    font-size: 6em;
+    font-size: 7.2em;
     color: #397f9e;
     margin-bottom: 10px;
 }
 .project .project-dir h4{
     color: #333;
     font-weight: normal;
-    transition: color 0.3s, font 0.3s;
+    width: 80%;
+    margin: 0 auto;
+    padding: 4px;
+    font-family: "Open Sans Semibold", sans-serif;
+    border-radius: 4px;
+    word-wrap: break-word;
+
 }
 footer{
     background: #fff;

@@ -117,9 +117,11 @@ function animateSearchArea() {
 
 	searchArea.style.width = '250px';
 	searchArea.style.borderColor = '#2d9ee0'
+	searchArea.style.backgroundColor = '#fff'
 }
 
 function undoSearchArea() {
     searchArea.style.width = '200px';
     searchArea.style.borderColor = '#e4e4e4'
+    searchArea.style.backgroundColor = '#f9f9f9'
 }
