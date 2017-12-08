@@ -85,6 +85,10 @@ window.onload = function()
 	(function() {
 		var search = document.getElementById('search')
 		search.addEventListener('keyup', searchProject)
+
+        search.addEventListener('focus', animateSearchArea)
+
+        search.addEventListener('focusout', undoSearchArea)
 		
 	})()
 }
@@ -103,4 +107,17 @@ function searchProject() {
 			project[i].style.display = "none";
 		}
 	}
+}
+
+var searchArea = document.getElementsByClassName('search-area')[0];
+
+function animateSearchArea() {
+
+	searchArea.style.width = '250px';
+	searchArea.style.borderColor = '#2d9ee0'
+}
+
+function undoSearchArea() {
+    searchArea.style.width = '200px';
+    searchArea.style.borderColor = '#e4e4e4'
 }

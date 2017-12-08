@@ -25,7 +25,12 @@ $dir = new DirectoryIterator($global_url);
     <div class="main-container">
         <!-- START HEADER -->
         <div class="header clearfix">
-            <input type="text" class="" id="search" placeholder="Search projects">
+            <div class="search-area">
+                <span class="search-icon">
+                    <i class="ion ion-search"></i>
+                </span>
+                <input type="text" class="" id="search" placeholder="Search">
+            </div>
             <h3>Projects</h3>
         </div>
         <!-- / END HEADER -->
