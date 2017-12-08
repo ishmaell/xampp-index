@@ -1,5 +1,7 @@
 window.onload = function()
 {
+	document.getElementById('search').focus();
+
 	/*
 	 * ----------------------------------------------------------------------------------------
 	 *  HIGHTLIGHT PROJECT IN MAIN CONTENT FROM NAV BAR
