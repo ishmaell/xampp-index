@@ -77,7 +77,7 @@ $dir = new DirectoryIterator($global_url);
         <div class="content">
             <!-- START ROW -->
 
-            <div class="row" id="row">
+            <div class="row" id="row" style="padding: 0 20px;">
                 
             <?php
 

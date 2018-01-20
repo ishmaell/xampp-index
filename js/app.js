@@ -7,7 +7,7 @@ window.onload = function()
 	 *  HIGHTLIGHT PROJECT IN MAIN CONTENT FROM NAV BAR
 	 * ----------------------------------------------------------------------------------------
 	 */
-	 
+
 	(function(){
 		var x = document.querySelectorAll('.nav-bar a'), y = document.querySelectorAll('.project a'),
 			header_title = document.querySelector('.header h3'), foo, timeout;
@@ -40,14 +40,14 @@ window.onload = function()
 			})
 		}
 	})();
-	
+
 	/*
 	 * ----------------------------------------------------------------------------------------
-	 *  CHANGE HEADER TITLE FROM PROJECT HIGHLIGHTED 
+	 *  CHANGE HEADER TITLE FROM PROJECT HIGHLIGHTED
 	 * ----------------------------------------------------------------------------------------
 	 */
 	(function(){
-		var x = document.querySelectorAll('.project a'), y = document.querySelectorAll('.nav-bar a'), 
+		var x = document.querySelectorAll('.project a'), y = document.querySelectorAll('.nav-bar a'),
 			z = document.querySelector('.content'), header_title = document.querySelector('.header h3'), foo, timeout;
 		for(var i=0; i<x.length; i++)
 		{
@@ -91,7 +91,7 @@ window.onload = function()
         search.addEventListener('focus', animateSearchArea)
 
         search.addEventListener('focusout', undoSearchArea)
-		
+
 	})()
 }
 
@@ -101,7 +101,7 @@ function searchProject() {
 	row = document.getElementById('row');
 	project = row.getElementsByClassName('project');
 	for (var i = 0; i < project.length; i++) {
-		
+
 		dataName = project[i].getElementsByTagName('a')[0].getAttribute('data-name');
 		if(dataName.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
 			project[i].style.display = "";
